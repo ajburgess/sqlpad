@@ -205,6 +205,11 @@ const configItems = [
     default: false,
   },
   {
+    key: 'editorFontSize',
+    envVar: 'SQLPAD_EDITOR_FONT_SIZE',
+    default: 14,
+  },
+  {
     key: 'queryResultMaxRows',
     envVar: 'SQLPAD_QUERY_RESULT_MAX_ROWS',
     default: 10000,

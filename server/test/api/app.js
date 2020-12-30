@@ -14,6 +14,7 @@ const expectedConfigKeys = [
   'defaultConnectionId',
   'allowCsvDownload',
   'editorWordWrap',
+  'editorFontSize',
   'publicUrl',
   'googleAuthConfigured',
   'localAuthConfigured',

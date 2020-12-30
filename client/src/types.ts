@@ -109,6 +109,7 @@ export interface AppInfo {
     baseUrl: string;
     defaultConnectionId: string;
     editorWordWrap: boolean;
+    editorFontSize: number;
     googleAuthConfigured: string;
     ldapConfigured: boolean;
     ldapRolesConfigured: boolean;

@@ -27,6 +27,7 @@ async function getApp(req, res) {
       baseUrl: config.get('baseUrl'),
       defaultConnectionId: config.get('defaultConnectionId'),
       editorWordWrap: config.get('editorWordWrap'),
+      editorFontSize: parseInt(config.get('editorFontSize')),
       googleAuthConfigured: config.googleAuthConfigured(),
       localAuthConfigured: !config.get('userpassAuthDisabled'),
       publicUrl: config.get('publicUrl'),
