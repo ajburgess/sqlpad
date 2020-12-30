@@ -47,4 +47,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: andrewjohnburgess/sqlpad
+          tags: andrewjohnburgess/sqlpad:latest
           tag_with_ref: true
