@@ -41,6 +41,10 @@ jobs:
           asset_name: sqlpad.tar.gz
           asset_content_type: application/gzip
 
+      - name: Get latest release version number
+        id: get_version
+        uses: battila7/get-version-action@v2
+
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -60,7 +64,7 @@ jobs:
         with:
           push: true
           tags: |
-            andrewjohnburgess/sqlpad:${GITHUB_REF##*/}
+            andrewjohnburgess/sqlpad:${{ steps.get_version.outputs.version }}
             andrewjohnburgess/sqlpad:latest
       -
         name: Image digest
