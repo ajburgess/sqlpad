@@ -1,6 +1,8 @@
-FROM node:12.18.4-alpine3.12 AS build
+FROM node:12.18 AS build
 
-RUN apk add --update --no-cache \
+RUN apt-get update && apt-get install \
+    unixodbc \
+    unixodbc-dev \
     python3 \
     make \
     g++
@@ -19,8 +21,8 @@ COPY ./server/package* ./server/
 
 # Install dependencies
 RUN npm ci
-RUN npm ci --prefix client
 RUN npm ci --prefix server
+RUN npm ci --prefix client
 
 # Copy rest of the project into docker
 COPY . .
@@ -47,7 +49,7 @@ RUN npm prune --production
 
 # Start another stage with a fresh node
 # Copy the server directory that has all the necessary node modules + front end build
-FROM node:12.18.4-alpine3.12
+FROM node:12.18
 
 WORKDIR /usr/app
 
